@@ -24,3 +24,5 @@ El sistema debe permitir registrar ingresos y egresos, calcular el tiempo de est
 - Manipulación de fechas y tiempos (`LocalDateTime`).
 - Pruebas unitarias.
 
+### Legajo: 112876
+### Nombre: Alexis Ezequiel Medina

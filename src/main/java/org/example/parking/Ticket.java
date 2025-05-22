@@ -37,7 +37,22 @@ public class Ticket {
         // por ejemplo si estuvo 45 minutos se le tarifa por 60, si estuvo 80 minutos se le tarifa por 120 minutos, etc...
         // retornar el importe final
 
-        return 0;
+        long minutos = calcularMinutos();
+        double precioPorHora = getPrecioPorHora();
+        long horas = (minutos + 59) / 60;
+        return horas * precioPorHora;
+
+    }
+
+    private double getPrecioPorHora() {
+        double precioPorHora;
+        switch (vehiculo.getTipo()) {
+            case AUTO -> precioPorHora = 100;
+            case SUV -> precioPorHora = 130;
+            case PICKUP -> precioPorHora = 180;
+            default -> throw new IllegalStateException("Tipo de vehículo no válido: " + vehiculo.getTipo());
+        }
+        return precioPorHora;
     }
 
 }
